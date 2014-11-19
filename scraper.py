@@ -8,8 +8,6 @@ import lxml.html
 html = scraperwiki.scrape("http://thepremierstore.com")
 #
 # # Find something on the page using css selectors
-root = lxml.html.fromstring(html)
-root.cssselect(/html/head/h2/text()).extract()
 
 for sel in response.xpath('//ul/li')
     title = sel.xpath('a/text()').extract()
