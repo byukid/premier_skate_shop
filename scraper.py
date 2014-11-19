@@ -9,10 +9,16 @@ html = scraperwiki.scrape("http://thepremierstore.com")
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-root.cssselect("div[align='left']")
+root.cssselect(/html/head/h2/text()).extract()
+
+for sel in response.xpath('//ul/li')
+    title = sel.xpath('a/text()').extract()
+    link = sel.xpath('a/@href').extract()
+    desc = sel.xpath('text()').extract()
+    print title, link, desc
 #
 # # Write out to the sqlite database using scraperwiki library
-#scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+scraperwiki.sqlite.save()
 #
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
